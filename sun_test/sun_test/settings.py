@@ -59,6 +59,7 @@ ROOT_URLCONF = 'sun_test.urls'
 TEMPLATE_DIR = os.path.join(BASE_DIR,'polls/ templates')
 STATIC_DIR = os.path.join(BASE_DIR,'polls/static')
 MEDIA_DIR = os.path.join(BASE_DIR,'polls/media')
+MEDIA_DIR = os.path.join(BASE_DIR,'polls/media')
 
 TEMPLATES = [
              {

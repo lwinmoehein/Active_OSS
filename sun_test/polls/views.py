@@ -53,7 +53,8 @@ def add_a_person(request):
 def get_a_person(request):
     a= [0,1,2,3]
     b= {'a':0,'b':1}
-    return render( request, 'retrieve_person.html',{'TestModel': TestModel.objects.get(name='ei nghon'),'list':a,'dict':b})
+    
+    return render( request, 'retrieve_person.html',{'TestModel':list(TestModel.objects.all())})
 
 def delete_a_person(request):
     submitted = False
@@ -84,11 +85,34 @@ def request_approval(request):
 def update_person(request):
     submitted = False
     if request.method == 'POST':
+        form = PersonForm(request.POST)
         aa = request.POST
         c = TestModel.objects.get(nrc=aa.get('nrc'))
-        return render(request, 'receive_approval.html', {'TestModel': c})
+    #    c.labour_id=aa.get('attribute')
+
+        attribute=aa.get('attribute')
+        setattr(c, attribute, aa.get('value'))
+        c.save();
+        return HttpResponseRedirect('/update_person/?submitted=True')
+
     else:
         form = TestModel()
         if 'submitted' in request.GET:
             submitted = True
-    return render(request, 'request_approval.html', {'form': form, 'submitted': submitted})
+    return render(request, 'update_person.html', {'form': form, 'submitted': submitted})
+
+
+    '''
+    submitted = False
+    if request.method == 'POST':
+        aa = request.POST
+        c = TestModel.objects.get(nrc=aa.get('nrc'))
+        c.delete();
+        return HttpResponseRedirect('/update_person/?submitted=True')
+
+    else:
+        form = TestModel()
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'update_person.html', {'form': form, 'submitted': submitted})
+'''

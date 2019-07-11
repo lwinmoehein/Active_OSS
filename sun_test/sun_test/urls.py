@@ -30,5 +30,6 @@ urlpatterns = [
                path('get_a_person/', views.get_a_person, name='retrieve-person'),
                path('delete_a_person/', views.delete_a_person, name='delete-person'),
                path('request_approval/', views.request_approval, name='request-approval'),
+               path('update_person/', views.update_person, name='update-person'),
 
                ]
