@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+
+<meta charset="UTF-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="description" content="Colorlib Templates">
+
+<meta name="author" content="Colorlib">
+
+<meta name="keywords" content="Colorlib Templates">
+<style type="text/css">
+    #wrapper {
+       margin-top: 0px;
+       margin-left: auto;
+      margin-right: auto;
+      background-color: #FFFFFF;
+      width: 800px; 
+      height: 1500px;
+    }
+</style>
+
+ <!-- Title Page-->
+    <title>{% block title %}
+         {{ page_title|default:"Untitled Page" }}
+         {% endblock title %}</title>
+
+
+<!-- Icons font CSS-->
+    <link href="{% static "vendor/mdi-font/css/material-design-iconic-font.min.css" %}" rel="stylesheet" media="all">
+
+<link href="{% static "vendor/font-awesome-4.7/css/font-awesome.min.css" %}" rel="stylesheet" media="all">
+
+<!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+
+<!-- vendor CSS-->
+    <link href="{% static 'vendor/select2/select2.min.css' %}" rel='stylesheet' media="all">
+    <link href="{% static 'vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+
+<!-- Main CSS-->
+    <link href="{% static "css/formdesign/main.css" %}" rel="stylesheet" media="all">
+
+
+	<!-- Bootstrap CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link href="{% static "vendor/animate/animate.css" %}" rel="stylesheet">
+    <!-- Icon CSS-->
+	<link rel="stylesheet" href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}">
+    <!-- Camera Slider -->
+    <link rel="stylesheet" href="{% static "vendor/camera-slider/camera.css" %}">
+    <!-- Owlcarousel CSS-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/owl_carousel/owl.carousel.css" %}" media="all">
+
+    <!--Theme Styles CSS-->
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/util_table.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main_table.css' %}">
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+
+
+    <script src="{% static "js/html5shiv.min.js" %}"></script>
+
+    <script src="{% static "js/respond.min.js" %}"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+<!-- Header_Area -->
+<!--scripts-->
+    <script src="{% static "vendor/jquery/formdesign/jquery.min.js" %}"></script>
+
+    <!-- vendor JS-->
+    <script src="{% static "vendor/select2/select2.min.js" %}"></script>
+
+            <script src="{% static "vendor/datepicker/moment.min.js" %}"></script>
+
+            <script src="{% static "vendor/datepicker/daterangepicker.js" %}"></script>
+
+
+    <!-- Main JS-->
+    <script src="{% static "js/global.js" %}"></script>
+
+<!--end script-->
+    <nav class="navbar navbar-default header_aera" id="main_navbar">
+        <div class="container">
+            <!-- searchForm -->
+            <div class="searchForm">
+                <form action="#" class="row m0">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input type="search" name="search" class="form-control" placeholder="Type & Hit Enter">
+                        <span class="input-group-addon form_hide"><i class="fa fa-times"></i></span>
+                    </div>
+                </form>
+            </div><!-- End searchForm -->
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="col-md-2 p0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#min_navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="{% static "images/active_oss.png" %}" alt=""></a>
+                </div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="col-md-10 p0">
+                <div class="collapse navbar-collapse" id="min_navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/homepage/">Home</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+                            <ul class="dropdown-menu other_dropdwn">
+                                <li><a href="about.html">About Us</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="dropdown submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services</a>
+                            <ul class="dropdown-menu other_dropdwn">
+                                <li><a href="/add_person/">add person main data</a></li>
+                                <li><a href="/update_person/">update person information</a></li>
+                                <li><a href="/delete_a_person/">delete person information</a></li>
+                                <li><a href="/data_visualization/">Data Dash Board</a></li>
+                                <li><a href="/get_a_person/">show all data</a></li>
+                                <li><a href="/request_approval/">Request Approval Letter</a></li>
+                                <li><a href="/register_crime_record/">Register crime record</a></li>
+                                <li><a href="/request_crime_record/">Request Crime Record</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#" class="nav_searchFrom"><i class="fa fa-search"></i></a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </div><!-- /.container -->
+    </nav>
+	<!-- End Header_Area -->
+ <div id="wrapper">
+   <section id="main">
+             {% block content %}
+             <p>Placeholder text in base template. Replace with page content.</p>
+             {% endblock content %}
+         </section>
+
+	</div>
+    
+        <!-- Footer Area -->
+    <footer class="footer_area">
+        <div class="container">
+            <div class="footer_row row">
+                <div class="col-md-3 col-sm-6 footer_about">
+                    <h2>ABOUT OUR COMPANY</h2>
+                    <img src="{% static "images/footer-logo.png" %}" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <ul class="socail_icon">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer_about quick">
+                    <h2>Quick links</h2>
+                    <ul class="quick_link">
+                        <li><a href="#"><i class="fa fa-chevron-right"></i>Building Construction</a></li>
+                        <li><a href="#"><i class="fa fa-chevron-right"></i>Home Renovation</a></li>
+                        <li><a href="#"><i class="fa fa-chevron-right"></i>Hardwood Flooring</a></li>
+                        <li><a href="#"><i class="fa fa-chevron-right"></i>Repairing Of Roof</a></li>
+                        <li><a href="#"><i class="fa fa-chevron-right"></i>Commercial Construction</a></li>
+                        <li><a href="#"><i class="fa fa-chevron-right"></i>Concreate Transport</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 footer_about">
+                    <h2>Twitter Feed</h2>
+                    <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+                    <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+                </div>
+                <div class="col-md-3 col-sm-6 footer_about">
+                    <h2>CONTACT US</h2>
+                    <address>
+                        <p>Have questions, comments or just want to say hello:</p>
+                        <ul class="my_address">
+                            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>info@thethemspro.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+880 123 456 789</a></li>
+                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Sector # 10, Road # 05, Plot # 31, Uttara, Dhaka 1230 </span></a></li>
+                        </ul>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="copyright_area">
+            Copyright 2017 All rights reserved. Designed by <a href="https://colorlib.com">Colorlib.</a>
+        </div>
+    </footer>
+    <!-- End Footer Area -->
+
+	<!-- Jquery JS-->
+   
+
+</body>
+	<!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

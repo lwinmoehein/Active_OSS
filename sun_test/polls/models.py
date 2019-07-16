@@ -30,6 +30,10 @@ class TestModel(DjangoCassandraModel):
     street  = columns.Text(required=False)
     city  = columns.Text(required=False)
     home_no=columns.Text(required=False)
+    ward=columns.Text(required=False)
+    township=columns.Text(required=False)
+    gender=columns.Text(required=False)
+
 
     def __str__(self):
        return '%s %s %s'%(self.nrc, self.name, self.race)
@@ -37,7 +41,7 @@ class TestModel(DjangoCassandraModel):
          db_table = "test_model"
 
     def address_approval(self):
-        return '%s %s %s'%(self.nrc, self.name, self.father_name)
+        return '%s %s %s'%(self.nrc, self.name, self.father_name,self.street,self.ward,self.home_no,self.township)
 
 class UserProfileInfo(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
@@ -45,3 +49,31 @@ class UserProfileInfo(models.Model):
     profile_pic = models.ImageField(upload_to='profile_pics',blank=True)
     def __str__(self):
         return self.user.username
+
+class CrimeRecord(DjangoCassandraModel):
+
+    crime_id   = columns.Text(primary_key=True,required=False)
+    court  = columns.Text(required=False)
+    potema  = columns.Text(required=False)
+    penalty  = columns.Text(required=False)
+    criminal_name  = columns.Text(required=False)
+    criminal_nrc  = columns.Text(required=False)
+    time=columns.Date(required=False)
+    tayalo_name  = columns.Text(required=False)
+    tayalo_nrc  = columns.Text(required=False)
+    street  = columns.Text(required=False)
+    city  = columns.Text(required=False)
+    number=columns.Text(required=False)
+    ward=columns.Text(required=False)
+    township=columns.Text(required=False)
+
+    def __str__(self):
+       return '%s %s %s'%(self.criminal_nrc, self.criminal_name, self.potema)
+       class Meta:
+         db_table = "crime_record"
+
+    def address_approval(self):
+        return '%s %s %s'%(self.nrc, self.name, self.father_name)
+
+
+

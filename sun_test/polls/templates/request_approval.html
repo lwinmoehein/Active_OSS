@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "main_base.html" %}
   
 {% block title %}Add Country{% endblock title %}
  
@@ -6,21 +6,82 @@
 <h1>Request approval from our database</h1>
   
   {% if submitted %}
-      <p class="success">
+    <div class="page-wrapper  p-t-45 p-b-50">
+
+    <div class="wrapper wrapper--w790">
+
+    <div class="card card-5">
+
+    <div class="card-heading">
+
+        <h2 class="title">Request person address approval</h2>
+
+    </div>
+
+    <div class="card-body">
+ <p class="success" style="font-size: 20px; ">
          Your request was submitted successfully. Thank you.
      </p>
  
+   
+         </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+ 
  {% else %}
+   <div class="page-wrapper  p-t-45 p-b-50">
+
+    <div class="wrapper wrapper--w790">
+
+    <div class="card card-5">
+
+    <div class="card-heading">
+
+        <h2 class="title">Request approval for address</h2>
+
+    </div>
+
+    <div class="card-body">
+
      <form action="" method="post" novalidate>
-     <table>
-         {{ form.as_table }}
-         <tr>
-             <td>&nbsp;</td>
-             <td>nrc<input type="text" name="nrc"></td>
-             <td><input type="submit" value="Submit"></td>
-         </tr>
-     </table>
+
+        <!--NRC-->
+    <div class="form-row">
+
+    <div class="name">NRC</div>
+
+    <div class="value">
+
+    <div class="input-group">
+
+        <input class="input--style-5" type="text" name="nrc">
+
+    </div>
+
+    </div>
+    </div>
+
+    <div class="value">
+
+    <div class="input-group">
+
+  </div>
+
+    </div>
+
+<br/>
+
+  <button class="btn btn--radius-2 btn--red" type="submit">REQUEST</button>
      {% csrf_token %}
      </form>
+         </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
  {% endif %}
  {% endblock content %}

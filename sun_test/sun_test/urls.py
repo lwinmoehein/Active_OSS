@@ -26,10 +26,15 @@ from polls import views
 
 urlpatterns = [
                path('polls/', include('polls.urls')),
-               path('add_a_person/', views.add_a_person, name='add-person'),
                path('get_a_person/', views.get_a_person, name='retrieve-person'),
                path('delete_a_person/', views.delete_a_person, name='delete-person'),
                path('request_approval/', views.request_approval, name='request-approval'),
                path('update_person/', views.update_person, name='update-person'),
+         #      path('write_pdf_view/', views.write_pdf_view, name='write-pdf-view'),
+               path('data_visualization/', views.data_visualization, name='data-visualization'),
+               path('homepage/', views.homepage, name='homepage'),
+               path('add_person/', views.add_person, name='add_person'),
+               path('register_crime_record/', views.register_crime_record, name='register-crime-record'),
+               path('request_crime_record/', views.request_crime_record, name='request_crime_record'),
 
                ]

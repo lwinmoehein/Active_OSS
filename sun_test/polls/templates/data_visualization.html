@@ -1,0 +1,27 @@
+{% extends 'main_base.html' %}
+{% load static %} 
+{% block title %}Data visutalization{% endblock title %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+p{color: red;}
+</style>
+</head>
+<body>
+
+{% block content %}
+<script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+<script type="text/javascript" src="{% static 'fusioncharts/themes/fusioncharts.theme.fint.js' %}"></script>
+<div id="chart-1">{{ output|safe }}</div>
+<div id="chart-2">{{ output2|safe }}</div>
+<div id="chart-3">{{ output3|safe }}</div>
+
+<p>hello there!</p>
+ {% endblock content %}
+
+</body>
+</html>>
+
+
