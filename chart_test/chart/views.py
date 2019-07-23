@@ -8,6 +8,7 @@ from .fusioncharts import FusionCharts
 # The `chart` method is defined to load chart data from an JSON string.
 
 def chart(request):
+    a=20000;
     # Create an object for the column2d chart using the FusionCharts class constructor
     pie3d = FusionCharts("pie3d", "ex2" , "100%", "400", "chart-1", "json",
         # The data is passed as a string in the `dataSource` as parameter.
@@ -35,7 +36,7 @@ def chart(request):
                                 "value": "270000"
                             }, {
                                 "label": "Insurance",
-                                "value": "20000"
+                                "value": "a"
                             }]
                            }""") 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
