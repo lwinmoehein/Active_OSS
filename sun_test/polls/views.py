@@ -40,7 +40,7 @@ def index(request):
 '''
 
 def index(request):
-    return render(request, 'main_base.html')
+    return render(request, 'index.html')
 
 #return HttpResponse("Hello, world. You're at the polls index.")
 
@@ -70,10 +70,13 @@ def add_person(request):
 
 
 def get_a_person(request):
-    a= [0,1,2,3]
-    b= {'a':0,'b':1}
     
-    return render( request, 'retrieve_person.html',{'TestModel':list(TestModel.objects.all())})
+    return render( request, 'retrieve_person.html',{'TestModel':list(TestModel.objects.filter(street='ရွာလယ်')),'t1':list(TestModel.objects.filter(street='မာဃလမ်းသွယ်'))})
+
+
+def table_test(request):
+   
+    return render( request, 'table.html')
 
 def delete_a_person(request):
     submitted = False
@@ -129,6 +132,7 @@ def request_approval(request):
 
     return render(request, 'request_approval.html', {'form': form, 'submitted': submitted})
 
+
 def update_person(request):
     submitted = False
     if request.method == 'POST':
@@ -156,9 +160,7 @@ def request_crime_record(request):
     if request.method == 'POST':
         aa = request.POST
 
-        c = CrimeRecord.objects.get(criminal_nrc=aa.get('nrc'))
         #totalcrime=CrimeRecord.objects.get(criminal_nrc=aa.get('nrc')).count()
-        totalcount=CrimeRecord.objects.count()
 
         response = HttpResponse(content_type='application/pdf')
         response['Content-Disposition'] = 'inline; filename="desktop/mypdf1.pdf"'
@@ -170,13 +172,19 @@ def request_crime_record(request):
     #actual content
         dateTimeObj = datetime.datetime.now()
         timestampStr = dateTimeObj.strftime("%d-%b-%Y (%H:%M:%S.%f)")
-        c = CrimeRecord.objects.get(criminal_nrc=aa.get('nrc'))
-        totalcount=CrimeRecord.objects.filter(criminal_nrc=aa.get('nrc')).count()
-      
-        if (totalcount>0):
+        
+        try:
+            totalcount=CrimeRecord.objects.filter(criminal_nrc=aa.get('nrc')).count()
+            c = CrimeRecord.objects.get(criminal_nrc=aa.get('nrc'))
+
+
+        except:
+            totalcount=0
+
+        if (totalcount>1):
             next_line='\n'
-            totalcount_str=str(totalcount)
-            pdf_content=u"မြို့နယ်----------------"+next_line+"စာအမှတ်၊     1/သဃအ-ရကအ/၂၀ -------------\nရက်စွဲ၊"+timestampStr+'\n------------------အကြောင်းအရာ။    ထောက်ခံချက်--------------------------------------------------- \n\n'+c.township+'..မြို့နယ်၊..'+c.ward+'..ကျေးရွာ..'+c.street+'လမ်း၊'+'  '+c.number+'အမှတ် ..'+'  '+'တွင်နေထိုင်သော (အဘ)ဦး'+c.tayalo_name+'၏ ...သား/သမီးဖြစ်သူ မောင်/မ'+c.criminal_name +' ... နိုင်ငံသားစိစစ်ရေးကဒ်ပြားအမှတ်'+c.criminal_nrc + '...ကိုင်သောသူသည် ကျေးရွာအုပ်စုအတွင်း...အမှန်တကယ်နေထိုင်ကြောင်းကို...အပိုင်ဆယ်အိမ်မှူး/ရာအိမ်မှူး ၏ထောက်ခံချက်အရ ...မှန်ကန်ကြောင်း ထပ်ဆင့်ထောက်ခံအပ်ပါသည်။'
+           # totalcount_str=str(totalcount)
+            pdf_content=u"မင်္ဂလာဒုံမြို့နယ်--------------------------------"+next_line+"စာအမှတ်၊     1/သဃအ-ရကအ/၂၀ -------------\nရက်စွဲ၊"+timestampStr+'\n---------------------အကြောင်းအရာ။    ထောက်ခံချက်--------------------------------------------------- \n\n'+c.township+'..မြို့နယ်၊..'+c.ward+'..ကျေးရွာ..'+c.street+'လမ်း၊'+'  '+c.number+'အမှတ် ..'+'  '+'တွင်နေထိုင်သော (အဘ)ဦး၏ ...သား/သမီးဖြစ်သူ မောင်/မ'+c.criminal_name +' ... နိုင်ငံသားစိစစ်ရေးကဒ်ပြားအမှတ်'+c.criminal_nrc + '...ကိုင်သောသူသည် ကျေးရွာအုပ်စုအတွင်း...ကျေးရွာအုပ်စုအတွင်း ၌'+'      ပြစ်မှု၊ဥပဒေပုဒ်မ('+ c.potema+'  ) ဖြင့် အမှန်တကယ်ပြစ်မှုကျူးလွန်ထားသူဖြစ်ကြောင်းကို...အပိုင်ဆယ်အိမ်မှူး/ရာအိမ်မှူး ၏ထောက်ခံချက်အရ ...မှန်ကန်ကြောင်း ထပ်ဆင့်ထောက်ခံအပ်ပါသည်။'
             pdf_content.replace("\n", "<br />")
 
             styles = getSampleStyleSheet()
@@ -190,10 +198,10 @@ def request_crime_record(request):
             canv.showPage()
             canv.save()
 
-        else:
+        elif(totalcount==0):
             
             next_line='\n'
-            pdf_content=u"မင်္ဂလာဒုံမြို့နယ်----------------"+next_line+"စာအမှတ်၊     1/သဃအ-ရကအ/၂၀ -------------\nရက်စွဲ၊"+timestampStr+'\n------------------အကြောင်းအရာ။    ထောက်ခံချက်--------------------------------------------------- \n\n'+c.township+'..မြို့နယ်၊..'+c.ward+'..ကျေးရွာ..'+c.street+'လမ်း၊'+'  '+c.number+'အမှတ် ..'+'  '+'တွင်နေထိုင်သော (အဘ)ဦး'+c.tayalo_name+'၏ ...သား/သမီးဖြစ်သူ မောင်/မ'+c.tayalo_name +' ... နိုင်ငံသားစိစစ်ရေးကဒ်ပြားအမှတ်'+c.criminal_nrc + '...ကိုင်သောသူသည် ကျေးရွာအုပ်စုအတွင်း...အမှန်တကယ်နေထိုင်ကြောင်းကို...အပိုင်ဆယ်အိမ်မှူး/ရာအိမ်မှူး ၏ထောက်ခံချက်အရ ...မှန်ကန်ကြောင်း ထပ်ဆင့်ထောက်ခံအပ်ပါသည်။'
+            pdf_content=u"မင်္ဂလာဒုံမြို့နယ်--------------------------------"+next_line+"စာအမှတ်၊     1/သဃအ-ရကအ/၂၀ -------------\nရက်စွဲ၊"+timestampStr+'\n---------------------အကြောင်းအရာ။    ထောက်ခံချက်--------------------------------------------------- \n\n'+aa.get('nrc')+'သည် ပြစ်မှုကင်းစင်ကြောင် ကျေးကျေးရွာအုပ်စုအတွင်း...ကျေးရွာအုပ်စုအတွင်း...အပိုင်ဆယ်အိမ်မှူး/ရာအိမ်မှူး ၏ထောက်ခံချက်အရ ...မှန်ကန်ကြောင်း ထပ်ဆင့်ထောက်ခံအပ်ပါသည်။'
             pdf_content.replace("\n", "<br />")
 
             styles = getSampleStyleSheet()
@@ -217,55 +225,9 @@ def request_crime_record(request):
 
     return render(request, 'request_approval.html', {'form': form, 'submitted': submitted})
 
-    '''
-
-        response = HttpResponse(content_type='application/pdf')
-        response['Content-Disposition'] = 'inline; filename="desktop/mypdf.pdf"'
-        
-        buffer = BytesIO()
-        p = canvas.Canvas(buffer)
-        
-        # Start writing the PDF here
-        x=300
-        y=300
-        test = u'こんにちは'
-        p.drawString(100,500,test.encode('utf-8'))
-        for i in list(TestModel.objects.all()):
-        
-        p.drawString(x, y,i.nrc)
-        x=x+10
-        y=y+10
-        # End writing
-        
-        p.showPage()
-        p.save()
-        
-        pdf = buffer.getvalue()
-        buffer.close()
-        response.write(pdf)
-        
-        return response
+  
     
     
-    
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'inline; filename="desktop/mypdf.pdf"'
-    width, height = defaultPageSize
-    pdf_content = "It's emoji time \u263A \U0001F61C. Let's add some cool emotions \U0001F48F \u270C. And some more \u2764 \U0001F436"
-    
-    styles = getSampleStyleSheet()
-    para = Paragraph(pdf_content, styles["Title"])
-    canv = canvas.Canvas('emoji.pdf')
-    
-    para.wrap(width, height)
-    para.drawOn(canv, 0, height/2)
-    
-    canv.save()
-    response.write(canv)
-    
-    return response
-    
-    '''
 def data_visualization(request):
 
   #  totalcount=list(TestModel.objects.get(ward='စမ်းကြီးဝ'))
@@ -317,3 +279,23 @@ def register_crime_record(request):
             submitted = True
     return render(request, 'crime_record.html', {'form': form, 'submitted': submitted})
 
+
+'''
+def select_person(request):
+   if request.method == 'POST':
+        form = PersonForm(request.POST)
+        aa = request.POST
+    #    c.labour_id=aa.get('attribute')
+
+        attribute=aa.get('attribute')
+        return HttpResponseRedirect('/get_a_person/?submitted=True')
+
+    else:
+        form = TestModel()
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render( request, 'retrieve_person.html',{'TestModel':list(TestModel.objects.get(nrc="12/mgdn(naing)170361"))})
+
+ 
+'''

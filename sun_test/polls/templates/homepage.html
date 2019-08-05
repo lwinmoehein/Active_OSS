@@ -1,13 +1,11 @@
-{% load static %}
-
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Topbuilder Construction Template</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon" />
@@ -63,7 +61,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="{% static "images/logo.png" %}" alt=""></a>
+                    <a class="navbar-brand" href="index.html"><img src="{% static "images/Logo-1.jpg" %}" alt="" "></a>
                 </div>
             </div>
 
@@ -88,9 +86,14 @@
                         <li class="dropdown submenu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services</a>
                             <ul class="dropdown-menu other_dropdwn">
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="services-2.html">Services-2</a></li>
-                            </ul>
+                                <li><a href="/add_person/">add person main data</a></li>
+                                <li><a href="/update_person/">update person information</a></li>
+                                <li><a href="/delete_a_person/">delete person information</a></li>
+                                <li><a href="/data_visualization/">Data Dash Board</a></li>
+                                <li><a href="/get_a_person/">show all data</a></li>
+                                <li><a href="/request_approval/">Request Approval Letter</a></li>
+                                <li><a href="/register_crime_record/">Register crime record</a></li>
+                                <li><a href="/request_crime_record/">Request Crime Record</a></li> </ul>
                         </li>
                         <li><a href="#">Gallery</a></li>
                         <li class="dropdown submenu">
@@ -101,7 +104,7 @@
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#" class="nav_searchFrom"><i class="fa fa-search"></i></a></li>
+                        <li><a href="#" class="nav_searchFrom">&nbsp&nbspLogin<img src="{% static "images/login.png" %}" style="width:45px;height:45px;"></a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div>
@@ -112,22 +115,22 @@
     <!-- Slider area -->
     <section class="slider_area row m0">
         <div class="slider_inner">
-            <div data-thumb="{% static "images/slider-1.jpg" %}" data-src="{% static "images/slider-1.jpg" %}">
+            <div data-thumb="{% static "images/oss4.jpg" %}" data-src="{% static "images/oss4.jpg" %}">
                 <div class="camera_caption">
                    <div class="container">
-                        <h5 class=" wow fadeInUp animated">Welcome to our</h5>
-                        <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">CLEAN, MODERN, MULTIPURPOSE THEME</h3>
-                        <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Our team of professionals will help you turn your dream home or flat into a reality fast. The Love Boat promises something for everyone. Now the world don't move to the beat of just one</p>
+                        <h5 class=" wow fadeInUp animated" >Welcome to OSS</h5>
+                        <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s"></h3>
+                        <div class=""><p class=" wow fadeInUp animated" data-wow-delay="0.8s">Active OSS ဆိုသည်မှာ ပြည်ထဲရေးဝန်ကြီးဌာန နှင့် အထွေထွေအုပ်ချုပ်ရေးရုံးများမှ ပြည်သူများအတွက် လိုအပ်သော အစိုးရနှင့်ဆိုင်သော ဝန်ဆောင်မှုများပေးနိုင်ရန်အတွက် ရည်ရွယ်၍ One Stop Shop (OSS)များကို information system ဖြင့် အဆင့်မြှင့်ကာဆောင်ရွက်ထားသော system တစ်ခုဖြစ်ပါသည်။</p></div>
                         <a class=" wow fadeInUp animated" data-wow-delay="1s" href="#">Read More</a>
                    </div>
                 </div>
             </div>
-            <div data-thumb="{% static "images/slider-2.jpg" %}" data-src="{% static "images/slider-2.jpg" %}">
+            <div data-thumb="{% static "images/egov.jpg" %}" data-src="{% static "images/egov.jpg" %}">
                 <div class="camera_caption">
                    <div class="container">
-                        <h5 class=" wow fadeInUp animated">Welcome to our</h5>
-                        <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">CLEAN ,MODERN, MULTIPURPOSE THEME</h3>
-                        <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Our team of professionals will help you turn your dream home or flat into a reality fast. The Love Boat promises something for everyone. Now the world don't move to the beat of just one</p>
+                        <h5 class=" wow fadeInUp animated">Welcome to OSS</h5>
+                        <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s"></h3>
+                        <p class=" wow fadeInUp animated" data-wow-delay="0.8s" font-size:18px>Active OSS ဆိုသည်မှာ ပြည်ထဲရေးဝန်ကြီးဌာန နှင့် အထွေထွေအုပ်ချုပ်ရေးရုံးများမှ ပြည်သူများအတွက် လိုအပ်သော အစိုးရနှင့်ဆိုင်သော ဝန်ဆောင်မှုများပေးနိုင်ရန်အတွက် ရည်ရွယ်၍ One Stop Shop (OSS)များကို information system ဖြင့် အဆင့်မြှင့်ကာဆောင်ရွက်ထားသော system တစ်ခုဖြစ်ပါသည်။</p>
                         <a class=" wow fadeInUp animated" data-wow-delay="1s" href="#">Read More</a>
                    </div>
                 </div>
@@ -165,40 +168,59 @@
     </section>
     <!-- End Professional Builde -->
 
-
-    <!-- What ew offer Area -->
+<!-- What ew offer Area -->
     <section class="what_we_area row">
         <div class="container">
             <div class="tittle wow fadeInUp">
                 <h2>WHAT WE OFFER</h2>
-            <a href="/add_a_person/">သန်ခေါင်းစာရင်း</a>
-                        <p>(က)တိကျမှန်ကန်သော လူဦးရေ စာရင်းရရှိစေရန် လူဦးရေသန်ခေါင်းစာရင်းများ အသစ်ပြင်ပေးခြင်း</p>
-                   </div>
-                </div>
+
+            </div>
+
+
+            <div class="row construction_iner">
+
                 <div class="col-md-4 col-sm-6 construction">
                    <div class="cns-img">
-                        <img src="{% static "images/cns-2.jpg" %}" alt="">
+                        <img src="{% static "images/3-Ways-You-Can-Use-Census-Data-538x218.jpg" %}" alt="">
+                   </div>
+                   <div class="cns-content">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                                    <a href="/add_a_person/">သန်ခေါင်းစာရင်း</a>
+                        <p>(က)တိကျမှန်ကန်သော လူဦးရေ စာရင်းရရှိစေရန် လူဦးရေသန်ခေါင်းစာရင်းများ အသစ်ပြင်ပေးခြင်း<br><br><br><br><br></p>
+                   </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 construction">
+                   <div class="cns-img">
+                        <img src="{% static "images/imageedit_1_4109955441.jpg" %}" alt="">
                    </div>
                    <div class="cns-content">
                         <i class="fa fa-keyboard-o" aria-hidden="true"></i>
                         <a href="#">အချက်အလက်များ</a>
-                        <p>နိုင်ငံသားများ၏ အချက်အလက်များ ပြင်ဆင်ပေးခြင်း ပြန်လည်ထုတ်ကြည့်နိုင်ခြင်း</p>
+                                                <p>(ခ)နိုင်ငံသားများ၏ အချက်အလက်များ ပြင်ဆင်ပေးခြင်း ပြန်လည်ထုတ်ကြည့်နိုင်ခြင်း<br><br><br><br><br></p>
                    </div>
                 </div>
+
+
                 <div class="col-md-4 col-sm-6 construction">
+
                    <div class="cns-img">
-                        <img src="{% static "images/cns-3.jpg" %}" alt="">
+                        <img src="{% static "images/recommendation.jpeg" %}" alt="">
                    </div>
                    <div class="cns-content">
                         <i class="fa fa-gavel" aria-hidden="true"></i>
-                        <a href="#">ထောက်ခံစာများ</a>
-                        <p>(ဂ)တက္ကသိုလ် ဝင်ခွင့်လျှောက်ထားခြင်း၊ အလုပ်လျှောက်ထားခြင်း စသည်များအတွက် လိုအပ်သော ဌာနဆိုင်ရာများမှ ထောက်ခံစာများထုတ်ပေးခြင်း </p>
+                          <a href="#">ထောက်ခံစာများ</a>
+                                                <p>(ဂ)တက္ကသိုလ် ဝင်ခွင့်လျှောက်ထားခြင်း၊ အလုပ်လျှောက်ထားခြင်း စသည်များအတွက် လိုအပ်သော ဌာနဆိုင်ရာများမှ ထောက်ခံစာများထုတ်ပေးခြင်း <br><br><br></p>
                    </div>
+
                 </div>
+
+
             </div>
         </div>
     </section>
     <!-- End What ew offer Area -->
+
 
 
 
@@ -208,8 +230,8 @@
             <div class="footer_row row">
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>ABOUT OUR COMPANY</h2>
-                    <img src="{% static "images/footer-logo.png" %}" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <img src="{% static "images/Logo-1.jpg" %}" alt="">
+                    <p>Active OSS ဆိုသည်မှာ ပြည်ထဲရေးဝန်ကြီးဌာန နှင့် အထွေထွေအုပ်ချုပ်ရေးရုံးများမှ ပြည်သူများအတွက် လိုအပ်သော အစိုးရနှင့်ဆိုင်သော ဝန်ဆောင်မှုများပေးနိုင်ရန်အတွက် ရည်ရွယ်၍ One Stop Shop (OSS)များကို information system ဖြင့် အဆင့်မြှင့်ကာဆောင်ရွက်ထားသော system တစ်ခုဖြစ်ပါသည်။</p>
                     <ul class="socail_icon">
                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -220,12 +242,13 @@
                 <div class="col-md-3 col-sm-6 footer_about quick">
                     <h2>Quick links</h2>
                     <ul class="quick_link">
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Building Construction</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Home Renovation</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Hardwood Flooring</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Repairing Of Roof</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Commercial Construction</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Concreate Transport</a></li>
+                        <li><a href="www.mol.gov.mm"><i class="fa fa-chevron-right"></i>Ministry of Labour, Immigration and Population</a></li>
+                        <li><a href="www.president-office.gov.mm"><i class="fa fa-chevron-right"></i>President Office</a></li>
+                        <li><a href="www.pyidaungsu.hluttaw.mm"><i class="fa fa-chevron-right"></i>Pyidaungsu Hluttaw</a></li>
+                        <li><a href="https://evisa.moip.gov.mm/"><i class="fa fa-chevron-right"></i>Myanmar eVisa</a></li>
+                        <li><a href="www.moi.gov.mm"><i class="fa fa-chevron-right"></i>Ministry of Information</a></li>
+                        <li><a href="www.motc.gov.mm"><i class="fa fa-chevron-right"></i>Ministry of Transport and Communications</a></li>
+
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 footer_about">
@@ -246,11 +269,10 @@
                 </div>
             </div>
         </div>
-        <div class="copyright_area">
-            Copyright 2017 All rights reserved. Designed by <a href="https://colorlib.com">Colorlib.</a>
-        </div>
+
     </footer>
     <!-- End Footer Area -->
+
 
 
     <script src="{% static "js/jquery-1.12.0.min.js" %}"></script>

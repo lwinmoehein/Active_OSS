@@ -456,11 +456,11 @@ h6 {
 }
 
 .btn--red {
-  background: #ff4b5a;
+  background: #007399;
 }
 
 .btn--red:hover {
-  background: #eb3746;
+  background: #007399;
 }
 
 /* ==========================================================================
@@ -770,7 +770,7 @@ input {
 
 .card-5 .card-heading {
   padding: 20px 0;
-  background: #1a1a1a;
+  background: #006080;
   -webkit-border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   border-top-left-radius: 10px;

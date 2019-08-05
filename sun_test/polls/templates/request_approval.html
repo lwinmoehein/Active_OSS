@@ -3,7 +3,6 @@
 {% block title %}Add Country{% endblock title %}
  
 {% block content %}
-<h1>Request approval from our database</h1>
   
   {% if submitted %}
     <div class="page-wrapper  p-t-45 p-b-50">
@@ -14,7 +13,6 @@
 
     <div class="card-heading">
 
-        <h2 class="title">Request person address approval</h2>
 
     </div>
 
@@ -74,7 +72,7 @@
 
 <br/>
 
-  <button class="btn btn--radius-2 btn--red" type="submit">REQUEST</button>
+  <button class="btn submit" type="submit">REQUEST</button>
      {% csrf_token %}
      </form>
          </div>

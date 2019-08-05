@@ -28,6 +28,7 @@
 <body>
   {% block content %}
   <div class="limiter">
+    <p style="font-size: 30px;text-align: center;">ရွာလယ်လမ်း ရှိ လူဦးရေ စာရင်း</p>
     <div class="container-table100">
       <div class="wrap-table100">
         <div class="table100 ver1 m-b-110">
@@ -72,50 +73,7 @@
     </div>
   </div>
 
-  <div class="limiter">
-    <div class="container-table100">
-      <div class="wrap-table100">
-        <div class="table100 ver1 m-b-110">
-          <div class="table100-head">
-            <table>
-              <thead>
-                <tr class="row100 head">
-                  <th class="cell100 column2">Name</th>
-                  <th class="cell100 column3">NRC</th>
-                  <th class="cell100 column2">Race</th>
-                  <th class="cell100 column2">Religion</th>
-                  <th class="cell100 column2">Father Name</th>
-                  <th class="cell100 column2">Father NRC</th>
-                  <th class="cell100 column4">Date Of Birth</th>
-
-                </tr>
-
-              </thead>
-            </table>
-
-          </div>
-
-          <div class="table100-body js-pscroll">
-            <table>
-              <tbody>
-              {% for b in TestModel %}
-                <tr class="row100 body">
-                  <td class="cell100 column2">{{ b.name }}</td>
-                  <td class="cell100 column3">{{ b.nrc }}</td>
-                  <td class="cell100 column2">{{ b.race }}</td>
-                  <td class="cell100 column2">{{ b.religion }}</td>
-                  <td class="cell100 column2">{{ b.father_name }}</td>
-                  <td class="cell100 column2">{{ b.father_nrc }}</td>
-                  <td class="cell100 column4">{{ b.dob }}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-</div> 
-      
-       </div>
-    </div>
-  </div>
+  
 
             {% endblock content %}
 

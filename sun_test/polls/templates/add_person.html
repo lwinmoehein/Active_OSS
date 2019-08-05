@@ -50,6 +50,7 @@
 
     <!--Theme Styles CSS-->
 	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}" media="all" />
+	<link rel="stylesheet" type="text/css" href="{% static "css/register.css" %}" media="all" />
 
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -94,306 +95,88 @@
     </div>
     {% else %}
 
-    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
 
-	<div class="wrapper wrapper--w790">
-
-	<div class="card card-5">
-
-	<div class="card-heading">
-
-		<h2 class="title">Event Registration Form</h2>
-
-	</div>
-
-	<div class="card-body">
-
-		<form method="POST">
-
-      <div class="form-row">
-        <div class="col-9"
-
-    	<div class="name">Name</div>
-
-    	<div class="value">
-
-    	<div class="input-group">
-
-    		<input class="input--style-5" type="text" name="name">
-
-    	</div>
-
-    	</div>
-    	</div>
-
-    	<div class="value">
-
-    	<div class="input-group">
-
-      </div>
-
-    	</div>
-
-	<div class="form-row">
-
-	<div class="name">NRC</div>
-
-	<div class="value">
-
-	<div class="input-group">
-
-		<input class="input--style-5" type="text" name="nrc">
-
-	</div>
-
-	</div>
-	</div>
-
-	<div class="value">
-
-	<div class="input-group">
-
-  </div>
-
-	</div>
-
-	<div class="form-row">
-
-	<div class="name">Religion</div>
-
-	<div class="value">
-
-	<div class="input-group">
-
-	<div class="rs-select2 js-select-simple select--no-search">
-
-	<select name="subject">
-
-	<option disabled="disabled" selected="selected">Choose option</option>
-
-	<option value="ဗုဒ္">Buddhism</option>
-
-	<option value="ခရစ်ယာန်">Christianity</option>
-
-	<option value="အစ္စလာမ်">Islam</option>
-	<option value="ဟိန္ဒူ">Hinduism</option>
-
-	<option>Other</option>
-	</select>
-
-	<div class="select-dropdown"></div>
-
-	</div>
-
-	</div>
-
-	</div>
-
-	</div><br/>
-	<div class="form-row m-b-55">
-
-	<div class="name">Address</div>
-
-	<div class="value">
-
-	<div class="row row-refine">
-
-	<div class="col-6">
-
-	<div class="input-group-desc">
-
-	<input class="input--style-5" type="text" name="home_no">
-
-	<label class="label--desc">number</label>
-
-	</div>
-<br/><br/>
-</div>
-
-	<div class="col-6">
-
-	<div class="input-group-desc">
-
-	<input class="input--style-5" type="text" name="street">
-
-	<label class="label--desc">street</label>
-
-	</div>
-
-	</div>
-	<div class="col-3">
-
-	<div class="input-group-desc">
-
-	<input class="input--style-5" type="text" name="ward">
-
-	<label class="label--desc">ward</label>
-
-	</div>
-
-	</div>
-
-	<div class="col-3">
-
-	<div class="input-group-desc">
-
-	<input class="input--style-5" type="text" name="township">
-
-	<label class="label--desc">township</label>
-
-	</div>
-
-	</div>
-
-	<div class="col-3">
-
-	<div class="input-group-desc">
-
-	<input class="input--style-5" type="text" name="city">
-
-	<label class="label--desc">city</label>
-
-	</div>
-
-	</div>
-
-	</div>
-
-	</div>
-
-	</div>
-  <div class="form-row">
-
-  <div class="name">Father's Name</div>
-
-  <div class="value">
-
-  <div class="input-group">
-
-    <input class="input--style-5" type="text" name="father_name">
-
-  </div>
-
-  </div>
-  </div>
-
-  <div class="value">
-
-  <div class="input-group">
-
-  </div>
-
-  </div>
-	<div class="form-row">
-
-	<div class="name">Father's NRC</div>
-
-	<div class="value">
-
-	<div class="input-group">
-
-		<input class="input--style-5" type="text" name="father_nrc">
-
-	</div>
-
-	</div>
-
-	</div>
-	<div class="value">
-
-	<div class="input-group">
-	</div>
-
-	</div>
-	<div class="form-row">
-
-	<label class="name">Date of Birth</label>
-
-	<div class="value">
-
-    <div class="input-group">
-
-      <input class="input--style-5" type="date" name="dob">
+<div class="content">
+ <div class="card card-2">
+ 	<div class="card-body">
+    <h2 class="title">CITIZEN REGISTRATION FORM</h2>
+                    <form method="POST">
+                        <table cellpadding="10" cellspacing="6">
+                        	<tr>
+                            	<td><label class="legend">Name</label></td>
+                            	<td colspan="3"><input type="text" placeholder="Enter Name" name="name" class="input"/></td>
+                            </tr>
+                            <tr>
+                            	<td><label class="legend">NRC</label></td>
+                            	<td colspan="3"><input type="text" placeholder="Enter NRC" name="nrc" class="input"/></td>
+                            </tr>
+                            <tr>
+                            	<td><label class="legend">Occupation</label></td>
+                            	<td colspan="3"><input type="text" placeholder="Enter Occupation" name="occupation" class="input"/></td>
+                            </tr>
+                           <tr>
+                            	<td><label class="legend">Religion</label></td>
+                                <td colspan="3">
+                                	<select name="religion" class="input2">
+                                    	<option>Choose Option</option>
+                                        <option>Buddihist</option>
+                                        <option>Christian</option>
+                                        <option>Islam</option>
+                                        <option>Hindu</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                            	<td><label class="legend">Address</label></td>
+                            	<td><input type="text" placeholder="Number" name="home_no" class="input1"/></td>
+                                <td colspan="2"><input type="text" placeholder="Street" name="street" class="input1"/></td>
+                            </tr>
+                             <tr>
+                            	<td></td>
+                            	<td><input type="text" placeholder="Ward" name="ward" class="input1"/></td>
+                                <td><input type="text" placeholder="Township" name="township" class="input1"/></td>
+                                <td><input type="text" placeholder="City" name="city" class="input3"/></td>
+                            </tr>
+                             <tr>
+                            	<td><label class="legend">Father's Name</label></td>
+                            	<td colspan="3"><input type="text" placeholder="Enter Father's Name" name="father_name" class="input"/></td>
+                            </tr>
+                            <tr>
+                            	<td><label class="legend">Father's NRC</label></td>
+                            	<td colspan="3"><input type="text" placeholder="Enter Father's Occupation" name="father_nrc" class="input"/></td>
+                            </tr>
+                            <tr>
+                            	<td><label class="legend">Date of Birth</label></td>
+                            	<td colspan="3"><input type="date" placeholder="Enter DOB" name="dob" class="input"/></td>
+                            </tr>
+                            <tr>
+                            <td>
+                             <label class="legend">Gender</label>
+                            </td>
+                            <td colspan="3">
+                            	<input type="radio" name="gender" value="male"/>Male
+   								<input type="radio" name="gender" value="female"/>Female
+                            </td>
+                            </tr>
+                            <tr>
+                            	<td><label class="legend">Race</label></td>
+                            	<td colspan="3"><input type="text" placeholder="Enter Race" name="race" class="input"/></td>
+                            </tr>
+                            
+                        </table>
+                        <button type="submit" class="btn submit">Register</button>
+                         {% csrf_token %}
+
+                    </form>
+                     {% endif %}
 
     </div>
+ </div>
+</div>
 
-	</div>
-
-	</div>
-
-	<div class="form-row">
-
-	<div class="name">Marital Status</div>
-	<div class="form-row p-t-20">
+	<!--end of form-->
 
 
-	<div class="p-t-15">
-
-	<label class="radio-container m-r-55">Single
-
-	<input type="radio" name="marital_status">
-
-	<span class="checkmark"></span>
-
-	</label>
-
-	<label class="radio-container">Married
-
-	<input type="radio" name="marital_status">
-
-	<span class="checkmark"></span>
-
-	</label>
-
-	<label class="radio-container">Divorced
-
-	<input type="radio" name="marital_status">
-
-	<span class="checkmark"></span>
-
-	</label>
-	<label class="radio-container">Widowed
-
-	<input type="radio" name="marital_status">
-
-	<span class="checkmark"></span>
-
-	</label>
-	</div>
-
-	</div><br/>
-
-  <div class="form-row">
-
-  <div class="name">Spouse's Name</div>
-
-  <div class="value">
-
-  <div class="input-group">
-
-    <input class="input--style-5" type="text" name="spouse_name">
-
-  </div>
-
-  </div>
-  </div>
-
-  <div class="value">
-
-  <div class="input-group">
-
-  </div>
-
-  </div>
-
-  <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
-
-	</div>
-     {% csrf_token %}
-
-	</form>
- {% endif %}
-	</div>
 
 	</div>
 

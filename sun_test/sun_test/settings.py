@@ -25,7 +25,7 @@ SECRET_KEY = '=yo#fxz3)j$bd+4!c05jev2ci7_%gifk%m!==5w7h1&3qbxlz%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1']
 
 
 # Application definition
@@ -86,18 +86,29 @@ WSGI_APPLICATION = 'sun_test.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django_cassandra_engine',
+            'NAME': 'test_1',
+            'TEST_NAME': 'test_1',
+            'HOST': '172.20.5.45',
+            'OPTIONS': {
+                'replication': {
+                    'strategy_class': 'SimpleStrategy',
+                    'replication_factor': 3
+    }
+    }
+},
+    'test_model': {
+        'ENGINE': 'django_cassandra_engine',
             'NAME': 'ndb',
             'TEST_NAME': 'ndb',
             'HOST': '127.0.0.1',
             'OPTIONS': {
                 'replication': {
                     'strategy_class': 'SimpleStrategy',
-                    'replication_factor': 1
+                    'replication_factor': 3
     }
     }
 }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
