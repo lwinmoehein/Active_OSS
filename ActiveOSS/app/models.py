@@ -17,7 +17,7 @@ from django.contrib.auth.models import User
 class TestModel(DjangoCassandraModel):
 
     __table_name = "test_model"
-    __keyspace__= "dis_test"
+    __keyspace__= "dis_test1"
     nrc   = columns.Text(primary_key=True,required=False)
     name  = columns.Text(required=False)
     occupation  = columns.Text(required=False)

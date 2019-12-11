@@ -74,7 +74,7 @@ def add_person(request):
 
 def show_data(request):
     
-    return render( request, 'show_data.html',{'street_name':'ရွာလယ်လမ်း','TestModel':list(TestModel.objects.filter(street='ရွာလယ်လမ်း')),'t1':list(TestModel.objects.filter(street='မာဃလမ်းသွယ်'))})
+    return render( request, 'show_data.html',{'street_name':'မြတ်စန္ဒာလမ်း','TestModel':list(TestModel.objects.filter(street='မြတ်စန္ဒာလမ်း')),'t1':list(TestModel.objects.filter(street='မာဃလမ်းသွယ်'))})
 
 
 def table_test(request):

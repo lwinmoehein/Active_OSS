@@ -56,7 +56,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'ActiveOSS.urls'
 
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR,'app/ templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR,'app/templates')
 STATIC_DIR = os.path.join(BASE_DIR,'app/static')
 MEDIA_DIR = os.path.join(BASE_DIR,'app/media')
 MEDIA_DIR = os.path.join(BASE_DIR,'app/media')
